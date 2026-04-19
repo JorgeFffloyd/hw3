@@ -1,9 +1,9 @@
 <?php
 // Настройки подключения к БД
 $db_host = 'localhost';
-$db_user = 'u82457';
-$db_pass = '7777166';       
-$db_name = 'u82457';
+$db_user = 'u82609';
+$db_pass = '7050514';       
+$db_name = 'u82609';
 
 // Подключение к MySQL
 try {
@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form_data['contract_accepted'] = isset($_POST['contract_accepted']);
     $form_data['languages'] = $_POST['languages'] ?? [];
 
-    // --- Валидация каждого поля ---
 
     // 1. ФИО: только буквы, пробелы, дефисы, длина 2-150
     if (empty($form_data['full_name'])) {
@@ -83,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = 'Email не должен превышать 100 символов.';
     }
 
-    // 4. Дата рождения (с проверкой год не больше 2022)
+    // 4. Дата рождения 
     if (empty($form_data['birth_date'])) {
         $errors['birth_date'] = 'Дата рождения обязательна.';
     } else {
@@ -308,7 +307,7 @@ if (empty($languages_from_db)) {
 
         <!-- Ссылка на просмотр сохранённых записей -->
         <div class="view-link">
-            <a href="view.php">📋 Просмотреть сохранённые анкеты</a>
+            <a href="view.php"> Просмотреть сохранённые анкеты</a>
         </div>
     </div>
 </body>
